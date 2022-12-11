@@ -1,0 +1,504 @@
+
+/* CSS landing Page Notes
+
+*/
+
+/* 1. Zero out margin, padding reset borders */
+
+:root {
+    --cardwidth: 300px;
+    --cardcolor: slategray;
+    --tshirtcolor1: #6d96f6;
+    --tshirtcolor2: #e05e5e;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+}
+
+* { 
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+img {
+    display:block;
+    width:100%;
+}
+
+/* 2.  Each page is 100vh */
+
+body {
+    height: 400vh;
+}
+
+#phone-nav {
+    display:none;
+}
+
+.desktop-nav {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(0 0 0);
+    opacity:.75;
+    z-index: 999;
+}
+
+.desktop-nav  > *{
+    display:flex;
+    gap: 5em;
+    justify-content: flex-end;
+    list-style-type: none;
+    text-transform: uppercase;
+    padding: 1.5rem;
+}
+
+nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.25rem;
+    letter-spacing: .3rem;
+}
+
+#page-1 {
+    min-height:100vh;
+    width:100vw;
+    background-image: url(assets/cover_t_shirt.png);
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#page-1 article {
+    color:white;
+    padding:1rem;
+    position: absolute;
+    top:30%;
+    left:5%;
+}
+
+#page-1 article h2 span {
+    color: slategray;
+}
+
+#page-1 article a  {
+    background:none;
+    border: 2px solid white;
+    border-radius:1px;
+    margin-top:2rem;
+    padding:.70rem;
+    transition:ease-in .15s;
+}
+
+#page-1 article a:hover {
+    background:white;
+    color: var(--tshirtcolor1);
+    border: 2px solid var(--tshirtcolor2);
+    transition:ease-in .25s;
+}
+
+#page-1 article a {
+    text-decoration: none;
+    color:white;
+    font-size:2rem;
+    width:100%;
+    padding:0.75rem;
+}
+
+
+/* Page 2 */
+
+#page-2 {
+    min-height:100vh;
+    background-color:rgb(41, 40, 40);
+    position: relative;
+}
+
+#card-area {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding:10%;
+}
+
+/* Styling the card */
+
+.card {
+    max-width: var(--cardwidth);
+    color:white;
+    border-radius: 3%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    box-shadow: .5rem .5rem 1rem rgb(73, 73, 73);
+    text-align: center;
+}
+
+.card h3 {
+    padding:1rem;
+}
+
+.card-text {
+    padding:1rem;
+}
+
+.card-image {
+    padding: 0 1rem;
+    width:100%;
+    transition: 1s;
+    z-index:1;
+}
+
+.card-image:hover {
+    transform: scale(1.5);
+    z-index:2;
+}
+
+footer {
+    color:white;
+    background-color: gray;
+    text-align:center;
+    padding: 2rem;
+    letter-spacing: .3rem;
+    position:absolute;
+    width:100%;
+    bottom:0;
+}
+
+
+
+/* Page 3 Styling */
+
+#page-3 {
+    min-height:100vh;
+    width: 100vw;
+    position: relative;
+}
+
+#banner-image {
+    background-image: url(assets/spoonful_of_sugar.jpg);
+    width: 100%;
+    background-color: black;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:40vh;
+}
+
+#product-wrapper {
+    max-width:900px;
+    position:relative;
+    top:-2rem;
+    width:100%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 4fr 2fr 1fr;
+}
+
+#t-shirt-image {
+    grid-column: 1;
+}
+
+#product-description {
+    display:flex;
+    flex-direction: column;
+    font-family: raleway, sans-serif;
+    font-size:.75rem;
+    color:black;
+    align-items:center;
+    justify-content: space-between;
+    }
+
+#headline{
+    margin-top: 4rem;
+}
+
+#product-details li {
+    list-style: none;
+    }
+
+#product-details {
+    width:100%;
+    }
+    
+#t-shirt-image {
+    object-fit: cover;
+    object-position: center center;
+}
+
+#buy-button {
+    align-self:flex-start;
+    width: 90%;
+}
+
+#buttons {
+    grid-column: 3;
+    align-self:end;
+}
+
+#Amzn-logo {
+    /* the parent div in the grid has align-self, but this is just to center the icon within the parent so text-align */
+    text-align: center;
+}
+
+/* height max-content set on flex-box, otherwise the individual SM icons stretch to fit grid element and can be activated off-icon */
+
+#social-media-bar {
+    display: flex;
+    height:max-content;
+    gap: .5rem;
+    grid-column:4;
+}
+
+#social-media-bar a {
+    text-decoration: none;
+}
+
+#social-media-bar a:visited {   
+    text-decoration: none;
+    color: black;
+}
+
+#social-media-bar a:hover {
+    color: red;
+    box-shadow: 1rem 1rem rgb(73, 73, 73);
+}
+
+
+/* Page 4 Styling */
+
+#page-4 {
+    min-height:100vh;
+    background-image: url(assets/page_4_image.png) ;
+    background-size:cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#page-4 #email-signup {
+    min-width:30vw;
+    min-height:30vh;
+    background-color: white;
+    border-radius: 2%;
+    box-shadow: 1rem 1rem 1rem rgb(43, 42, 42);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+}
+
+#page-4 #email-signup h1 {
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    margin: 1rem 0 0 0;
+}
+
+input {
+    padding:.5rem;
+}
+
+#first-name {
+    display:flex;
+    gap: 1rem;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+#last-name {
+    display:flex;
+    gap: 1rem;
+    align-items: baseline;
+    padding:5% 0;
+    flex-wrap:wrap
+}
+
+#email {
+    display:flex;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0 0 5% 0;
+    flex-wrap:wrap;
+}
+
+.button {
+    border-radius: 20px;
+    border: 1px;
+    border-color: white;
+    background-color: palevioletred;
+    text-align:center;
+    padding:.5rem;
+}
+
+.button a {
+    border: 1px;
+    color: white;
+    font-family: poppins, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+#page-4 #email-signup-btn {
+    margin:auto;
+}
+
+/* font awesome  */
+
+    .fa-amazon {
+        font-size: 10rem;
+    }
+
+    .fa-twitter, .fa-pinterest, .fa-whatsapp, .fa-facebook, .fa-instagram  {
+        font-size: 2rem;
+    }
+
+    /* Social media colors */
+
+    .fa-twitter {
+        color:#55acee;
+    }
+
+    .fa-facebook {
+        color: #3c589a;
+    }
+
+    .fa-pinterest {
+        color:#cc2329;
+    }
+
+    .fa-instagram {
+        color:white;
+        background-image: linear-gradient(red,blue);
+    }
+
+    .fa-whatsapp {
+    background-color:#55eb4c;
+    color:white;
+    }
+
+
+    /* Media Queries change the main nav bar from text to icons */
+
+    @media only screen and (max-width: 600px) {
+
+    html {
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        overflow: auto;
+    }
+
+    .desktop-nav {
+        display:none;
+    }
+
+    footer {
+        display:none;
+    }
+        
+    #phone-nav {
+        padding: 1rem;
+        display:flex;
+        justify-content: space-around;
+        position: fixed;
+        width: 100%;
+        background-color: rgb(0 0 0);
+        z-index: 999;
+    }
+
+    #phone-nav > * {
+        color: white;
+        font-size:x-large;
+    }
+
+    #phone-nav > a:hover {
+        color:cornflowerblue;
+    }
+
+    #page-1 {
+        background-position: center center;
+        min-height:100vh;
+        width:100vw;
+        background-image: url(assets/cover_t_shirt_mobile.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+       }
+
+    #page-1  article {
+            position:absolute;
+            bottom:0;
+            right:50%;
+            height:fit-content;
+        }
+
+    #page-2 {
+        min-height:100vh;
+        display:flex;
+        background-color: black;
+        overflow:hidden;
+    }
+
+    .card {
+        margin-top:1rem;
+    }
+
+    #page-3 {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+
+    #page-3 #banner-image {
+        display:none;
+    }
+
+    #page-3 #product-wrapper {
+        display:block;
+    }
+
+    #page-3 #t-shirt-image {
+        margin-top:4rem;
+    }
+
+    #page-3 #headline {
+        margin-top:0;
+    }
+
+    #page-3 #product-description {
+        text-align: center;
+        margin:0;
+    }
+
+    #page-3 #buy-button {
+        width:50%;
+        margin:.5rem auto;
+    }
+
+    #page-3 #product-description p {
+     display: none;
+    }
+
+    #page-3 #social-media-bar {
+        padding: 1.5rem;
+        width:fit-content;
+        margin:0 auto;
+    }
+
+    .fa-amazon {
+        font-size: 5rem;
+    }
+    }
